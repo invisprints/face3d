@@ -46,7 +46,7 @@ class  MorphabelModel(object):
     # ------------------------------------- shape: represented with mesh(vertices & triangles(fixed))
     def get_shape_para(self, type = 'random'):
         if type == 'zero':
-            sp = np.random.zeros((self.n_shape_para, 1))
+            sp = np.zeros((self.n_shape_para, 1))
         elif type == 'random':
             sp = np.random.rand(self.n_shape_para, 1)*1e04
         return sp

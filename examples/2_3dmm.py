@@ -10,7 +10,6 @@ from skimage import io
 from time import time
 import matplotlib.pyplot as plt
 
-sys.path.append('..')
 import face3d
 from face3d import mesh
 from face3d.morphable_model import MorphabelModel
@@ -21,9 +20,9 @@ bfm = MorphabelModel('Data/BFM/Out/BFM.mat')
 print('init bfm model success')
 
 # --- 2. generate face mesh: vertices(represent shape) & colors(represent texture)
-sp = bfm.get_shape_para('random')
-ep = bfm.get_exp_para('random')
-vertices = bfm.generate_vertices(sp, ep)
+sp = bfm.get_shape_para('random') # [199,1]
+ep = bfm.get_exp_para('random') # [29,1]
+vertices = bfm.generate_vertices(sp, ep) # [53215, 3]
 
 tp = bfm.get_tex_para('random')
 colors = bfm.generate_colors(tp)
